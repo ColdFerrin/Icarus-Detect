@@ -1,0 +1,80 @@
+{
+  "settings": {
+    "index": {
+      "number_of_replicas": 0,
+      "number_of_shards": 3,
+      "refresh_interval": "5s",
+      "mapping.total_fields.limit": 2000,
+      "mapping.depth.limit": 50,
+      "mapping.nested_fields.limit": 200
+    }
+  },
+  "index_patterns": "icarus-drone-id*",
+  "version": 1,
+  "mappings": {
+    "_doc": {
+      "properties": {
+        "@timestamp": {
+          "type": "date"
+        },
+        "Image": {
+          "type": "binary"
+        },
+        "Score": {
+          "type": "double"
+        },
+        "Camera":{
+          "properties": {
+            "CamID": {
+              "type": "integer"
+            },
+            "Location": {
+              "type": "geo-point"
+            },
+            "CameraModel": {
+              "properties": {
+                "Make": {
+                  "type": "text"
+                },
+                "Model": {
+                  "type": "text"
+                },
+                "Lens": {
+                  "type": "text"
+                }
+              }
+            }
+          }
+        },
+        "Identification": {
+          "properties": {
+            
+          }
+        },
+        "Training Set": {
+          "type": "boolean"
+        },
+        "Camera Location": {
+          "type": "array",
+          "additionalItems": true,
+          "uniqueItems": false,
+          "items": [
+            {
+              "id": "Longitude",
+              "type": "number",
+              "arrayItem": true
+            },
+            {
+              "id": "Latitude",
+              "type": "number",
+              "arrayItem": true
+            }
+          ]
+        },
+        "Camera Model": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
