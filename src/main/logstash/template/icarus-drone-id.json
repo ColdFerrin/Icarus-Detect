@@ -1,8 +1,8 @@
 {
   "settings": {
     "index": {
-      "number_of_replicas": 0,
-      "number_of_shards": 3,
+      "number_of_replicas": 1,
+      "number_of_shards": 5,
       "refresh_interval": "5s",
       "mapping.total_fields.limit": 2000,
       "mapping.depth.limit": 50,
@@ -34,13 +34,13 @@
             "CameraModel": {
               "properties": {
                 "Make": {
-                  "type": "text"
+                  "type": "keyword"
                 },
                 "Model": {
-                  "type": "text"
+                  "type": "keyword"
                 },
                 "Lens": {
-                  "type": "text"
+                  "type": "keyword"
                 }
               }
             }
@@ -48,31 +48,26 @@
         },
         "Identification": {
           "properties": {
-            
-          }
-        },
-        "Training Set": {
-          "type": "boolean"
-        },
-        "Camera Location": {
-          "type": "array",
-          "additionalItems": true,
-          "uniqueItems": false,
-          "items": [
-            {
-              "id": "Longitude",
-              "type": "number",
-              "arrayItem": true
+            "Correct": {
+              "type": "boolean"
             },
-            {
-              "id": "Latitude",
-              "type": "number",
-              "arrayItem": true
+            "Is_Training": {
+              "type": "boolean"
+            },
+            "Drone": {
+              "properties": {
+                "Make": {
+                  "type": "keyword"
+                },
+                "Model": {
+                  "type": "keyword"
+                },
+                "ModelNo": {
+                  "type": "keyword"
+                }
+              }
             }
-          ]
-        },
-        "Camera Model": {
-          "type": "string"
+          }
         }
       }
     }
