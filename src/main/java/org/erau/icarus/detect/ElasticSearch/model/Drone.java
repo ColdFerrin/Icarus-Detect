@@ -1,12 +1,12 @@
-package org.erau.icarus.detect.ElasticSearch.model;
+package org.erau.icarus.detect.ElasticSearch.Model;
 
 import lombok.Data;
 
 @Data
 public class Drone {
-    private String Make;
+    private String make;
 
-    private String Model;
+    private String model;
 
-    private String ModelNo;
+    private String modelNo;
 }

@@ -17,52 +17,52 @@
         "@timestamp": {
           "type": "date"
         },
-        "Image": {
+        "image": {
           "type": "binary"
         },
-        "Score": {
-          "type": "double"
+        "score": {
+          "type": "float"
         },
-        "Camera":{
+        "camera":{
           "properties": {
-            "CamID": {
+            "camID": {
               "type": "integer"
             },
-            "Location": {
+            "location": {
               "type": "geo-point"
             },
-            "CameraModel": {
+            "cameraModel": {
               "properties": {
-                "Make": {
+                "make": {
                   "type": "keyword"
                 },
-                "Model": {
+                "model": {
                   "type": "keyword"
                 },
-                "Lens": {
+                "lens": {
                   "type": "keyword"
                 }
               }
             }
           }
         },
-        "Identification": {
+        "identification": {
           "properties": {
-            "Correct": {
+            "correct": {
               "type": "boolean"
             },
-            "Is_Training": {
+            "isTraining": {
               "type": "boolean"
             },
-            "Drone": {
+            "drone": {
               "properties": {
-                "Make": {
+                "make": {
                   "type": "keyword"
                 },
-                "Model": {
+                "model": {
                   "type": "keyword"
                 },
-                "ModelNo": {
+                "modelNo": {
                   "type": "keyword"
                 }
               }
