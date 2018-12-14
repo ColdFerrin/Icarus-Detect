@@ -22,5 +22,5 @@ public class Camera {
     private String camModelId;
 
     @Column(name = "CameraLens_LensID")
-    private String
+    private String CameraLens_LensID;
 }

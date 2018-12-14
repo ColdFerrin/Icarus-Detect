@@ -20,7 +20,7 @@ public class _doc {
     @Field(type = FieldType.Date)
     private Date timestamp;
 
-    private byte[] image;
+    private String image;
 
     private FloatArray score;
 
